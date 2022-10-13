@@ -17,6 +17,12 @@ export default function TextForm(props) {
         setText(newText)
     }
 
+    let removeSpace = ()=>{
+        let removeSpace = text.replace(/\s+/g,' ').trim();
+        setText(removeSpace)
+    }
+
+
     const [text, setText] = useState("Enter text here.")
 
   return (
@@ -29,6 +35,7 @@ export default function TextForm(props) {
             <button className='btn btn-primary mx-2' onClick={handleUperCase}> Convert to Uppercase</button> 
             <button className='btn btn-primary mx-2' onClick={handleLowerCase}> Convert to Lowercase</button>
             <button className='btn btn-primary mx-2' onClick={reverseWord}> Reverse on word Basis</button>
+            <button className='btn btn-primary mx-2' onClick={removeSpace}> Remove extra space Basis</button>
         </div>
         <div className={`container mb-3 text-${props.mode ==='light'?'dark':'light'}`}>
             <h1>Your text Summary</h1>
